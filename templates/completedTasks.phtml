@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>Homepage</title>
+    <meta charset="UTF-8">
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <style>
         body {
@@ -24,21 +23,18 @@
             margin-bottom: 0;
         }
     </style>
+    <title>Completed tasks</title>
 </head>
 <body>
-<h1>Tasks</h1><br>
-<form action="/tasks/add" method="post">
-    <label for="task_name">Task:</label>
-    <input id="task_name" type="text" name="task_name">
-    <input type="submit" value="Add the task"/>
-</form><br>
+
+<h1>Completed tasks</h1>
+
 <?php
 foreach ($tasks as $task) {
-    echo '<span>' . $task['task_name'] . '</span>' . ' <form action="/tasks/completed/' . $task['id'] . '" method="post"><input type="submit" value="✓"></form>' . '<form action="/editTask/' .$task['id'] . '" method="get"> <input type="submit" value="✎"></form>'. '<br>';
+    echo '<span>' . $task['task_name'] . '</span>' . ' <form action="/completedTasks/' . $task['id'] . '" method="get"><input type="submit" value="X">' . '<br>';
 }
 ?>
 
-<p><a href="/completedTasks">See completed tasks</a></p>
-
+<p><a href="/">Go back to tasks</a></p>
 </body>
 </html>
