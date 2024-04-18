@@ -76,4 +76,13 @@ class TaskModel
         $query->execute();
     }
 
+    public function editText($idToEdit)
+    {
+        $query = $this->db->prepare(
+            "SELECT `task_name` FROM `tasks` WHERE `id` = $idToEdit"
+        );
+        $query->execute();
+        return $query->fetch();
+    }
+
 }

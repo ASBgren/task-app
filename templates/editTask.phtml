@@ -28,7 +28,7 @@
 <h2>Edit task</h2>
 <form action="/editTask/<?=$id?>" method="post">
     <label for="editTask">Edit task:</label>
-    <input id="editTask" type="text" name="editTask">
+    <input id="editTask" type="text" name="editTask" value="<?=$editText?>">
     <br>
     <input type="submit" value="Update task"/>
 </form>

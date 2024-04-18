@@ -22,8 +22,7 @@ class DisplayEditFormController
     public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $idToEdit = $args['id'];
-//        $tasks = $this->model->getEditTasks();
-        return $this->renderer->render($response, 'editTask.phtml', ['id'=>$idToEdit]);
-
+        $editText = $this->model->editText($idToEdit);
+        return $this->renderer->render($response, 'editTask.phtml', ['id'=>$idToEdit, 'editText'=>$editText['task_name']]);
     }
 }
