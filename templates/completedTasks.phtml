@@ -54,7 +54,7 @@
 
     <?php
     foreach ($tasks as $task) {
-        echo '<div class="container d-flex justify-content-center">' . '<span class="me-2">' . $task['task_name'] . '</span>' . ' <form action="/completedTasks/' . $task['id'] . '" method="get"><input type="submit" value="X">' . '</div>' . '<br>';
+        echo '<div class="container d-flex justify-content-center">' . '<span class="me-2">' . $task['task_name'] . '</span>' . ' <form action="/completedTasks/' . $task['id'] . '" method="get"><input type="submit" value="X"></form>' . '</div>' . '<br>';
     }
     ?>
 

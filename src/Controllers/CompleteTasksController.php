@@ -24,6 +24,6 @@ class CompleteTasksController
     {
         $idToComplete = $args['id'];
         $this->model->completeTasks($idToComplete);
-        return $response->withHeader('Location', '/completedTasks')->withStatus(302);
+        return $response->withHeader('Location', '/')->withStatus(302);
     }
 }
